@@ -20,7 +20,7 @@ GLuint loadBMP(const char* file) {
     if (hdr[0]!='B'||hdr[1]!='M') { fclose(f); return 0; }
     if (*(short*)&hdr[28] != 24)   { printf("24bit\n"); fclose(f); return 0; }
 
-    int off = *(int*)&hdr[10];
+    int off = *(int*)&hdr[10]; 
     int w   = *(int*)&hdr[18];
     int h   = *(int*)&hdr[22];
     int ah  = h < 0 ? -h : h;
